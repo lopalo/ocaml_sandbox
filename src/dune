@@ -1,0 +1,11 @@
+(executable
+  (name main)
+  (modules main)
+  (libraries
+    sandbox))
+
+(library
+  (name sandbox)
+  (modules (:standard \ main)))
+
+
