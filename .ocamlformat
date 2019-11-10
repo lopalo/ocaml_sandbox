@@ -1,0 +1,4 @@
+profile = ocamlformat
+field-space = loose
+indicate-multiline-delimiters = no
+sequence-style = terminator
