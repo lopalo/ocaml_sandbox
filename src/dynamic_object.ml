@@ -45,7 +45,9 @@ let res' =
   concat_containers a b
 
 type 'a gg =
-  {q : int; b : 'a}
+  { q : int;
+    b : 'a }
   constraint 'a = < make_str : string -> string ; .. >
 
 let b = {q = 2; b = new int_container 4}
+

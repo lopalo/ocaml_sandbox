@@ -47,36 +47,36 @@ let concat_containers a b =
   let module B = (val b : Container) in
   (a, b, A.make_str v ^ " :: " ^ B.make_str v)
 
-let res =
-  let a =
-    (module Make_int_container (struct
-      let v = 777
-    end) : Int_container)
-  in
-  let b =
-    (module Make_lst_container (struct
-      let v = ["777"]
-    end) : Lst_container)
-  in
-  match concat_containers a b with
-  | ((module X), (module Y), s) as r ->
-      print_int (X.get_u 200);
-      print_newline ();
-      print_string (L.hd Y.bbb);
-      print_newline ();
-      print_string s;
-      print_newline ();
-      r
-
-let res =
-  let a =
-    (module Make_lst_container (struct
-      let v = ["777"]
-    end) : Lst_container)
-  in
-  let b =
-    (module Make_int_container (struct
-      let v = 777
-    end) : Int_container)
-  in
-  concat_containers a b
+(* let res = *)
+(*   let a = *)
+(*     (module Make_int_container (struct *)
+(*       let v = 777 *)
+(*     end) : Int_container) *)
+(*   in *)
+(*   let b = *)
+(*     (module Make_lst_container (struct *)
+(*       let v = ["777"] *)
+(*     end) : Lst_container) *)
+(*   in *)
+(*   match concat_containers a b with *)
+(*   | ((module X), (module Y), s) as r -> *)
+(*       print_int (X.get_u 200); *)
+(*       print_newline (); *)
+(*       print_string (L.hd Y.bbb); *)
+(*       print_newline (); *)
+(*       print_string s; *)
+(*       print_newline (); *)
+(*       r *)
+(*  *)
+(* let res = *)
+(*   let a = *)
+(*     (module Make_lst_container (struct *)
+(*       let v = ["777"] *)
+(*     end) : Lst_container) *)
+(*   in *)
+(*   let b = *)
+(*     (module Make_int_container (struct *)
+(*       let v = 777 *)
+(*     end) : Int_container) *)
+(*   in *)
+(*   concat_containers a b *)
